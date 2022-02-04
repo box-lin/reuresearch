@@ -1,0 +1,15 @@
+In  10761  apps :      successful: 5111        failed: 5647
+< 1 >:   Effect: Failure [INSTALL_FAILED_DEXOPT]
+   	 -- SDK 0 :   16
+   	 -- SDK 3 :   113
+   	 -- SDK 4 :   60
+   	 -- SDK 8 :   56
+   	 -- SDK 21 :   2
+   	 -- SDK 23 :   1
+< 2 >:   Effect: Failure [INSTALL_PARSE_FAILED_UNEXPECTED_EXCEPTION]
+   	 -- SDK 3 :   7
+   	 -- SDK 8 :   4
+< 3 >:   Effect: Failure [INSTALL_FAILED_OLDER_SDK]
+< 4 >:   Effect: Failure [INSTALL_FAILED_MISSING_SHARED_LIBRARY]
+< 5 >:   Effect: Failure [INSTALL_FAILED_NO_MATCHING_ABIS]
+< 6 >:   Effect: Failure [INSTALL_PARSE_FAILED_MANIFEST_MALFORMED]

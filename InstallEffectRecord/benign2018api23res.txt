@@ -1,0 +1,22 @@
+In  15469  apps :      successful: 8407        failed: 7060
+< 1 >:   Effect: Failure [INSTALL_PARSE_FAILED_UNEXPECTED_EXCEPTION]
+   	 -- SDK 3 :   44
+   	 -- SDK 4 :   23
+   	 -- SDK 8 :   23
+   	 -- SDK 21 :   2
+   	 -- SDK 23 :   1
+< 2 >:   Effect: Failure [INSTALL_FAILED_MISSING_SHARED_LIBRARY]
+   	 -- SDK 3 :   5
+   	 -- SDK 4 :   1
+   	 -- SDK 8 :   2
+< 3 >:   Effect: Failure [INSTALL_PARSE_FAILED_NO_CERTIFICATES]
+   	 -- SDK 3 :   1
+   	 -- SDK 8 :   1
+< 4 >:   Effect: Failure [INSTALL_FAILED_NO_MATCHING_ABIS]
+   	 -- SDK 0 :   16
+   	 -- SDK 3 :   70
+   	 -- SDK 4 :   36
+   	 -- SDK 8 :   33
+< 5 >:   Effect: Failure [INSTALL_FAILED_OLDER_SDK]
+   	 -- SDK 8 :   1
+< 6 >:   Effect: Failure [INSTALL_PARSE_FAILED_MANIFEST_MALFORMED]

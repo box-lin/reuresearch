@@ -1,0 +1,13 @@
+In  4060  apps :      successful: 2716        failed: 5
+< 1 >:   Effect: Failure [INSTALL_FAILED_NO_MATCHING_ABIS]
+   	 -- SDK 0 :   16
+   	 -- SDK 3 :   116
+   	 -- SDK 4 :   59
+   	 -- SDK 8 :   59
+   	 -- SDK 21 :   2
+   	 -- SDK 23 :   1
+< 2 >:   Effect: Failure [INSTALL_FAILED_MISSING_SHARED_LIBRARY]
+   	 -- SDK 3 :   4
+   	 -- SDK 4 :   1
+   	 -- SDK 8 :   1
+< 3 >:   Effect: Failure [INSTALL_FAILED_OLDER_SDK]

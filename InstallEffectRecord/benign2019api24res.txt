@@ -1,0 +1,15 @@
+In  16603  apps :      successful: 9622        failed: 7001
+< 1 >:   Effect: No messsage
+   	 -- SDK 0 :   16
+   	 -- SDK 3 :   67
+   	 -- SDK 4 :   43
+   	 -- SDK 8 :   42
+   	 -- SDK 21 :   2
+   	 -- SDK 23 :   1
+< 2 >:   Effect: Failure [INSTALL_PARSE_FAILED_UNEXPECTED_EXCEPTION]
+   	 -- SDK 3 :   53
+   	 -- SDK 4 :   17
+   	 -- SDK 8 :   18
+< 3 >:   Effect: Failure [INSTALL_FAILED_MISSING_SHARED_LIBRARY]
+< 4 >:   Effect: Failure [INSTALL_FAILED_NO_MATCHING_ABIS]
+< 5 >:   Effect: Failure [INSTALL_FAILED_OLDER_SDK]

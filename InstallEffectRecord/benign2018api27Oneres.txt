@@ -1,0 +1,135 @@
+In  7152  apps :      successful: 6937        failed: 215
+< 1 >:   Effect: Failure [INSTALL_FAILED_NO_MATCHING_ABIS]
+   	 -- SDK 3 :   69
+   	 -- SDK 4 :   34
+   	 -- SDK 8 :   32
+   	 -- SDK 21 :   2
+< 2 >:   Effect: adb: failed to install /home/hcai/Downloads/AndroZoo/benign-2018/03AB5381C5570708C67497BBD89D415EDB95FE52DDD37EE72F21B276292BDF8E.apk: cmd: Failure calling service package: Broken pipe (32)
+   	 -- SDK 3 :   1
+   	 -- SDK 23 :   1
+< 3 >:   Effect: adb: failed to install /home/hcai/Downloads/AndroZoo/benign-2018/0148BDE5244AF5CE4F59146333A8124C3CE397C41290A4F0EE1EC2F6DD56AA31.apk: cmd: Failure calling service package: Broken pipe (32)
+   	 -- SDK 3 :   1
+   	 -- SDK 4 :   1
+< 4 >:   Effect: Failure [INSTALL_PARSE_FAILED_NO_CERTIFICATES]
+   	 -- SDK 3 :   1
+   	 -- SDK 4 :   1
+< 5 >:   Effect: adb: failed to install /home/hcai/Downloads/AndroZoo/benign-2018/01BE89013F3140F44806BAECD017607FF25BF87EFE955D453FCB1192C62D589C.apk: cmd: Failure calling service package: Broken pipe (32)
+   	 -- SDK 3 :   1
+   	 -- SDK 8 :   1
+< 6 >:   Effect: adb: failed to install /home/hcai/Downloads/AndroZoo/benign-2018/000657E205CEF4DFC173260778C5006A3B4D5E743C6DA7D7D6D75D93B222E9CB.apk: cmd: Failure calling service package: Broken pipe (32)
+   	 -- SDK 3 :   1
+   	 -- SDK 8 :   1
+< 7 >:   Effect: adb: failed to install /home/hcai/Downloads/AndroZoo/benign-2018/01B8469C0F8543FAFCE7582FB3E1AFF274FD338C981724ECA1FF7C8A00DBF275.apk: cmd: Failure calling service package: Broken pipe (32)
+   	 -- SDK 3 :   1
+   	 -- SDK 4 :   1
+< 8 >:   Effect: adb: failed to install /home/hcai/Downloads/AndroZoo/benign-2018/013B1F9C43C2DC2FABCFC5AB34AA659DA1CA09797ED13EEE288C6119209CE533.apk: cmd: Failure calling service package: Broken pipe (32)
+   	 -- SDK 3 :   1
+   	 -- SDK 4 :   1
+< 9 >:   Effect: adb: failed to install /home/hcai/Downloads/AndroZoo/benign-2018/02A37E8BAC8AA2A2CF87967C7A2F4DAC0F974B861C25DE70F4BA00720ADC3231.apk: cmd: Failure calling service package: Broken pipe (32)
+   	 -- SDK 3 :   1
+   	 -- SDK 4 :   1
+< 10 >:   Effect: adb: failed to install /home/hcai/Downloads/AndroZoo/benign-2018/03B76C249844BF708007FF5C37D443E73E866ADDE4E0BB769A31EAB92F2A0808.apk: cmd: Failure calling service package: Broken pipe (32)
+   	 -- SDK 3 :   1
+   	 -- SDK 8 :   1
+< 11 >:   Effect: adb: failed to install /home/hcai/Downloads/AndroZoo/benign-2018/016552455DB6BF63EDF4F4B835F423C83A53D17DA11733EC599CBFC5C77DF983.apk: cmd: Failure calling service package: Broken pipe (32)
+   	 -- SDK 3 :   1
+   	 -- SDK 4 :   1
+< 12 >:   Effect: adb: failed to install /home/hcai/Downloads/AndroZoo/benign-2018/01EEAF17C54AB1B628707D8592553CA775B0BAFCD9FCB4588BF5796D62554CF5.apk: cmd: Failure calling service package: Broken pipe (32)
+   	 -- SDK 3 :   1
+   	 -- SDK 8 :   1
+< 13 >:   Effect: adb: failed to install /home/hcai/Downloads/AndroZoo/benign-2018/00222543B5E5F8F731F28A8E02DBFC722569E4F8EC037293EB79150AB9854E84.apk: cmd: Failure calling service package: Broken pipe (32)
+   	 -- SDK 3 :   1
+   	 -- SDK 4 :   1
+< 14 >:   Effect: adb: failed to install /home/hcai/Downloads/AndroZoo/benign-2018/02105A56060EDD2107ACE3257E12BAAB9A67559CAF5723C344C382FDCF527D71.apk: cmd: Failure calling service package: Broken pipe (32)
+   	 -- SDK 3 :   1
+   	 -- SDK 8 :   1
+< 15 >:   Effect: adb: failed to install /home/hcai/Downloads/AndroZoo/benign-2018/03509C72C3E4946345EF15CEF3519B9A101E049E429F99861437EF227F5A9ABB.apk: cmd: Failure calling service package: Broken pipe (32)
+   	 -- SDK 3 :   1
+   	 -- SDK 4 :   1
+< 16 >:   Effect: adb: failed to install /home/hcai/Downloads/AndroZoo/benign-2018/0267A28B040E60D458D0EFA460A97543BDF97A72201CE28283FC4E9056AC0126.apk: cmd: Failure calling service package: Broken pipe (32)
+   	 -- SDK 3 :   1
+   	 -- SDK 8 :   1
+< 17 >:   Effect: adb: failed to install /home/hcai/Downloads/AndroZoo/benign-2018/0344A32AB45193FC647253CE37B0F579A4B2B1F0159C7441C887C76FEE389E67.apk: cmd: Failure calling service package: Broken pipe (32)
+   	 -- SDK 3 :   1
+   	 -- SDK 8 :   1
+< 18 >:   Effect: adb: failed to install /home/hcai/Downloads/AndroZoo/benign-2018/0243AF5B67A179AD960EDACC9913C3B185E9C6F95C02BB2216CA4C8901F9337E.apk: cmd: Failure calling service package: Broken pipe (32)
+   	 -- SDK 3 :   1
+   	 -- SDK 4 :   1
+< 19 >:   Effect: adb: failed to install /home/hcai/Downloads/AndroZoo/benign-2018/008609DC50A0733647DDB7C6E2E9EFBC76CBABFB6FD9D1571609785673A440FC.apk: cmd: Failure calling service package: Broken pipe (32)
+   	 -- SDK 3 :   1
+   	 -- SDK 4 :   1
+< 20 >:   Effect: adb: failed to install /home/hcai/Downloads/AndroZoo/benign-2018/00A06DC10B76267B145E1B2C77F2A3BCF2A7D511DFBBD78EF1FFAFF2411245C5.apk: cmd: Failure calling service package: Broken pipe (32)
+   	 -- SDK 3 :   1
+   	 -- SDK 8 :   1
+< 21 >:   Effect: adb: failed to install /home/hcai/Downloads/AndroZoo/benign-2018/00CFF8A001B8C53EB47FC83C45959B8F11731C8E62C1C8D908B4A12C87A89261.apk: cmd: Failure calling service package: Broken pipe (32)
+   	 -- SDK 3 :   1
+   	 -- SDK 4 :   1
+< 22 >:   Effect: Failure [INSTALL_PARSE_FAILED_UNEXPECTED_EXCEPTION]
+   	 -- SDK 3 :   1
+   	 -- SDK 8 :   1
+< 23 >:   Effect: adb: failed to install /home/hcai/Downloads/AndroZoo/benign-2018/036DAAF761A67BFB91E560C68BDAF10BE1826E62DF4FBAC6834CCFFF01B6B0E5.apk: cmd: Failure calling service package: Broken pipe (32)
+   	 -- SDK 3 :   1
+   	 -- SDK 4 :   1
+< 24 >:   Effect: adb: failed to install /home/hcai/Downloads/AndroZoo/benign-2018/005AAEF58F05C97B53C6A7E77D9B01A259A371556356CA26992B6016F02B1B2E.apk: cmd: Failure calling service package: Broken pipe (32)
+   	 -- SDK 3 :   1
+   	 -- SDK 8 :   1
+< 25 >:   Effect: adb: failed to install /home/hcai/Downloads/AndroZoo/benign-2018/009E326F34A891683A028D599D68C287765CC034E41A287A837819C128EF059C.apk: cmd: Failure calling service package: Broken pipe (32)
+   	 -- SDK 3 :   1
+   	 -- SDK 4 :   1
+< 26 >:   Effect: adb: failed to install /home/hcai/Downloads/AndroZoo/benign-2018/0375AFEA9112AE63F42F9D560A202EBB17DF38B7CA9A378785DD6043C808513A.apk: cmd: Failure calling service package: Broken pipe (32)
+   	 -- SDK 3 :   1
+   	 -- SDK 8 :   1
+< 27 >:   Effect: adb: failed to install /home/hcai/Downloads/AndroZoo/benign-2018/0112BBB82B3F5DE8341EA1E0CC2823CE6253508C5FF6F78E4449D18087D012AB.apk: cmd: Failure calling service package: Broken pipe (32)
+   	 -- SDK 3 :   1
+   	 -- SDK 8 :   1
+< 28 >:   Effect: adb: failed to install /home/hcai/Downloads/AndroZoo/benign-2018/0386C2CF55AA03104677E0549FA7456444AE053FC0F0542B8C5E3E704C8A575F.apk: cmd: Failure calling service package: Broken pipe (32)
+   	 -- SDK 3 :   1
+   	 -- SDK 8 :   1
+< 29 >:   Effect: adb: failed to install /home/hcai/Downloads/AndroZoo/more2benign-2018/083DE3613F1642018F02685D1E99781DB3C2C6D8D556A43871672D3BB0854EC5.apk: cmd: Failure calling service package: Broken pipe (32)
+   	 -- SDK 3 :   1
+< 30 >:   Effect: adb: failed to install /home/hcai/Downloads/AndroZoo/more2benign-2018/09F507FB41662082E03BD1F5A50E7C53C2C979D3AB8EB3C5B949BEB2275806C1.apk: cmd: Failure calling service package: Broken pipe (32)
+   	 -- SDK 8 :   1
+< 31 >:   Effect: adb: failed to install /home/hcai/Downloads/AndroZoo/more2benign-2018/0BCC923C7C3EE6BA55A9A0C2A48F0529EC9192F9396AE0FCC9BEF7AB5F943810.apk: cmd: Failure calling service package: Broken pipe (32)
+   	 -- SDK 8 :   1
+< 32 >:   Effect: adb: failed to install /home/hcai/Downloads/AndroZoo/more2benign-2018/0D5DC7DF9173343E7AA4DC4DD9AFD706642A5A64292EE6B4A1BCE7FFB605DC1E.apk: cmd: Failure calling service package: Broken pipe (32)
+   	 -- SDK 4 :   1
+< 33 >:   Effect: adb: failed to install /home/hcai/Downloads/AndroZoo/more2benign-2018/0EB654C8D326EDC9EDDF442067E47BEA4BE7EBC19D1D2458A4E21EF36F5928CE.apk: cmd: Failure calling service package: Broken pipe (32)
+   	 -- SDK 4 :   1
+< 34 >:   Effect: adb: failed to install /home/hcai/Downloads/AndroZoo/more2benign-2018/10241D3D45F403C9D081CFEF27923C9B7F24D5585983B90EF143F6EC97FDC7DA.apk: cmd: Failure calling service package: Broken pipe (32)
+   	 -- SDK 8 :   1
+< 35 >:   Effect: adb: failed to install /home/hcai/Downloads/AndroZoo/more2benign-2018/11DF3E270DEACBEA2426ECAC011CB3A3978F1AFD760B65F469E2CC8AEE6DF8CA.apk: cmd: Failure calling service package: Broken pipe (32)
+   	 -- SDK 3 :   1
+< 36 >:   Effect: adb: failed to install /home/hcai/Downloads/AndroZoo/more2benign-2018/1219C5E3E0D8CF9FB05AE1BF0322808BF5ECE2EAD15FA08A316E3DCFD2E2D6DB.apk: cmd: Failure calling service package: Broken pipe (32)
+   	 -- SDK 8 :   1
+< 37 >:   Effect: adb: failed to install /home/hcai/Downloads/AndroZoo/more2benign-2018/121C3B82FC8F1BE8046CA8036B22513A2037644E6604EEEAC64DCE3921885B1B.apk: cmd: Failure calling service package: Broken pipe (32)
+   	 -- SDK 4 :   1
+< 38 >:   Effect: adb: failed to install /home/hcai/Downloads/AndroZoo/more2benign-2018/1417EE81A9B471236C7B616D4E100138E85466E7874F0E7249ACF3178F5DE002.apk: cmd: Failure calling service package: Broken pipe (32)
+   	 -- SDK 8 :   1
+< 39 >:   Effect: adb: failed to install /home/hcai/Downloads/AndroZoo/more2benign-2018/1584A628799B1566058935F33E87857EBD1B88CEF8A7028CD47E6773BEB1C17A.apk: cmd: Failure calling service package: Broken pipe (32)
+   	 -- SDK 4 :   1
+< 40 >:   Effect: adb: failed to install /home/hcai/Downloads/AndroZoo/more2benign-2018/178E572DE74D513AB1136CD996904EF5CB677B613B6C4066A8B9441E9E228496.apk: cmd: Failure calling service package: Broken pipe (32)
+   	 -- SDK 4 :   1
+< 41 >:   Effect: adb: failed to install /home/hcai/Downloads/AndroZoo/more2benign-2018/1916174FE08C9AEADFD4B0AF629B11DB972C44497D53685FE03838A6FDF4BBEC.apk: cmd: Failure calling service package: Broken pipe (32)
+   	 -- SDK 3 :   1
+< 42 >:   Effect: adb: failed to install /home/hcai/Downloads/AndroZoo/more2benign-2018/1A73FACBEA3941ECBE143A08FE30C593DC67BDC23F6D8790D248B73B28249205.apk: cmd: Failure calling service package: Broken pipe (32)
+   	 -- SDK 3 :   1
+< 43 >:   Effect: adb: failed to install /home/hcai/Downloads/AndroZoo/more2benign-2018/1C22C3A2EA4609DD63C51C18DCAC824A52C5FB67A03C6582F2D699D190DC08EC.apk: cmd: Failure calling service package: Broken pipe (32)
+   	 -- SDK 3 :   1
+< 44 >:   Effect: adb: failed to install /home/hcai/Downloads/AndroZoo/more2benign-2018/1C86FD9FC5CE35061ACD9328E86AE6F7DD98E314DBC6DE54E6AECE4B5E458B7F.apk: cmd: Failure calling service package: Broken pipe (32)
+   	 -- SDK 3 :   1
+< 45 >:   Effect: adb: failed to install /home/hcai/Downloads/AndroZoo/more2benign-2018/1C884668B4616A30B92CF532FB3C3F78F562627975766F723124B14BC3DDA93C.apk: cmd: Failure calling service package: Broken pipe (32)
+   	 -- SDK 8 :   1
+< 46 >:   Effect: adb: failed to install /home/hcai/Downloads/AndroZoo/more2benign-2018/1EEE9156C635E8C1F82FE77A0A9B110E075AC71BC5BE573348132D10CD37C34F.apk: cmd: Failure calling service package: Broken pipe (32)
+   	 -- SDK 8 :   1
+< 47 >:   Effect: adb: failed to install /home/hcai/Downloads/AndroZoo/more2benign-2018/2014EB694C7BAEA25A5ADBAD531DDAE051151B99F14226EE359507D2546FADA8.apk: cmd: Failure calling service package: Broken pipe (32)
+   	 -- SDK 8 :   1
+< 48 >:   Effect: adb: failed to install /home/hcai/Downloads/AndroZoo/more2benign-2018/215E4155519862834D91A073D84549E70A9D4B4E23DD58B3F37E96A0FD7B435A.apk: cmd: Failure calling service package: Broken pipe (32)
+   	 -- SDK 3 :   1
+< 49 >:   Effect: adb: failed to install /home/hcai/Downloads/AndroZoo/more2benign-2018/22B3A46B67130164377BB7B95EB4E8244821521E1EAA3ACDF16F8FB3F513ACC0.apk: cmd: Failure calling service package: Broken pipe (32)
+   	 -- SDK 4 :   1
+< 50 >:   Effect: adb: failed to install /home/hcai/Downloads/AndroZoo/more2benign-2018/241DEDBF056B5D866C40A1AC83A1FECFC2BA9111D9B3AE46D60A9A153556891A.apk: cmd: Failure calling service package: Broken pipe (32)
+   	 -- SDK 3 :   1
+< 51 >:   Effect: adb: failed to install /home/hcai/Downloads/AndroZoo/more2benign-2018/25B0C4348E07237918414FDBFCEC04D8FD5BC4F25F9CA18F2226D4660601EA1F.apk: cmd: Failure calling service package: Broken pipe (32)
+   	 -- SDK 3 :   1
+< 52 >:   Effect: adb: failed to install /home/hcai/Downloads/AndroZoo/more2benign-2018/26E9CD088C830C940DCD1829A0B09C54A6A0EDB6042F1E721D847659809CC76E.apk: cmd: Failure calling service package: Broken pipe (32)
+   	 -- SDK 3 :   1
