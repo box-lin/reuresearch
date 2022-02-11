@@ -1,10 +1,10 @@
 # Android Compatibility Analysis
 
-### 1. Compute the android installation/runtime compatibility for Benign apps 2018-2019 and Malware apps 2010-2019.
+1. Compute the android installation/runtime compatibility for Benign apps 2018-2019 and Malware apps 2010-2019.
 
-### 2. Statisticly analysis the Installation/Runtime Compatibility for RQs (1-6 see research paper)
+2. Statisticly analysis the Installation/Runtime Compatibility for RQs (1-6 see research paper)
 
-### 3. Develop new computation method that computes the compatibility for multi-apk for 2018-2019 andriod apps
+3. Develop new computation method that computes the compatibility for multi-apk for 2018-2019 andriod apps
 	
 	**Installation-time**
 	-	Refer to installation log
