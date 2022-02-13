@@ -1,0 +1,8 @@
+===================== Installation Results for <Installation_benign2018.api25> =====================
+total apks: 2454
+success apks: 2454
+fail apks: 0
+
+<-------------- Fail effect ----------------->
+
+------------------------- details -----------------------------

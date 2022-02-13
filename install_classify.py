@@ -67,7 +67,10 @@ def classify_each(install_item):
     
     for l in lst:
         if l.startswith('Failure'):
-            fail_reason = l.split()[1]
+	    try:
+            	fail_reason = l.split()[1]
+	    except:
+                continue
             apk_failed[fail_reason].add(apk_num)
 
 
