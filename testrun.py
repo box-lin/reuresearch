@@ -21,12 +21,17 @@ if __name__ == "__main__":
 
         visited = set()
 
+        fulladdress =""
+        
         # can't launch.
         crash_immdiate = set()
         for filename in filenames:
             # cut from .logcat or .monkey postfix
             apkname = filename[0:-7]
             fullname=os.path.join(parent,filename)
+
+            # for use of write out file name
+            fulladdress = fullname
 
             # if apk has been founded previously crash immiately, check next trace
             if apkname in crash_immdiate: 
@@ -73,7 +78,17 @@ if __name__ == "__main__":
                         continue
 
         # print result
-        write_file_name = str(rootdir) + str(dirnames)
+        cut = 0
+        for i in range(len(fulladdress)-1,-1,-1):
+            if fulladdress[i] == '/':
+                cut = i
+                break
+        write_name_temp = fulladdress[0:cut]
+        write_file_name = ""
+        for c in write_name_temp:
+            if c != '/':
+                write_file_name += c
+
 
         os.system("mkdir -p RuntimeResult")
         output = open('./RuntimeResult/' + write_file_name +'-res.txt', 'w')
@@ -102,6 +117,6 @@ if __name__ == "__main__":
             print("Failure: [{}]: {}".format(k, len(v)))
             output.write("Failure: [{}]: {}\n".format(k, len(v)))
             for apk in v:
-                print("         " + str(apk))
+               # print("         " + str(apk))
                 output.write("         " + str(apk) + "\n")
         output.close()

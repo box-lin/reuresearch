@@ -1,0 +1,7 @@
+===================== Runtime Results for <API26Benign2018> =====================
+total Apks: 1635
+success apks: 1634
+fail apks: 1
+
+Failure: [Immdiately Crash]: 1
+         0CB295ED9EF8412EC3A418421354C6C842BBA8172AD2B47182CF0BEC5112BF91.apk
