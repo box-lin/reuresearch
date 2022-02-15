@@ -5,27 +5,24 @@ import sys
 import collections
 
 
-
-# key failure per distinct of apks
-fail_apks = collections.defaultdict(set)
-
-# buffer for success running apks
-# key apk value 1 means only check its logcat or monkey, 2 means both logcat and monkey checked and no crash founded.
-buffer = {}
-
-# add apk to success when buffer[apk] = 2
-success = set()
-
-visited = set()
-
-# can't launch.
-crash_immdiate = set()
-
-
 if __name__ == "__main__":
     rootdir = sys.argv[1]
 
     for parent, dirnames, filenames in os.walk(rootdir):
+         # key failure per distinct of apks
+        fail_apks = collections.defaultdict(set)
+
+        # buffer for success running apks
+        # key apk value 1 means only check its logcat or monkey, 2 means both logcat and monkey checked and no crash founded.
+        buffer = {}
+
+        # add apk to success when buffer[apk] = 2
+        success = set()
+
+        visited = set()
+
+        # can't launch.
+        crash_immdiate = set()
         for filename in filenames:
             # cut from .logcat or .monkey postfix
             apkname = filename[0:-7]
@@ -37,7 +34,7 @@ if __name__ == "__main__":
                 continue
 
             # read the trace
-            f = open(fullname, 'r')
+            f = open(fullname, 'r', errors="ignore")
             info = f.read()
             f.close()
 
@@ -75,36 +72,36 @@ if __name__ == "__main__":
                     except:
                         continue
 
-    # print result
-    write_file_name = str(filter(lambda x: x != '/', fullname[0:13]))
+        # print result
+        write_file_name = str(rootdir) + str(dirnames)
 
+        os.system("mkdir -p RuntimeResult")
+        output = open('./RuntimeResult/' + write_file_name +'-res.txt', 'w')
 
-    os.system("mkdir -p RuntimeResult")
-    output = open('./RuntimeResult/' + write_file_name +'-res.txt', 'w')
+        print("===================== Runtime Results for <{}> =====================".format(str(write_file_name)))
+        output.write("===================== Runtime Results for <{}> =====================\n".format(str(write_file_name)))
 
-    print("===================== Runtime Results for <{}> =====================".format(str(write_file_name)))
-    output.write("===================== Runtime Results for <{}> =====================\n".format(str(write_file_name)))
+        success_cnt = len(success)
+        fail_cnt = 0
+        for k, v in fail_apks.items():
+            fail_cnt += len(v)
+        total_cnt = success_cnt+fail_cnt
 
-    success_cnt = len(success)
-    fail_cnt = 0
-    for k, v in fail_apks.items():
-        fail_cnt += len(v)
-    total_cnt = success_cnt+fail_cnt
+        print("total Apks: " +str(total_cnt))
+        print("success apks: "+str(success_cnt))
+        print("fail apks: "+str(fail_cnt))
 
-    print("total Apks: " +str(total_cnt))
-    print("success apks: "+str(success_cnt))
-    print("fail apks: "+str(fail_cnt))
+        output.write("total Apks: {}\n".format(total_cnt))
+        output.write("success apks: {}\n".format(success_cnt))
+        output.write("fail apks: {}\n".format(fail_cnt))
 
-    output.write("total Apks: {}\n".format(total_cnt))
-    output.write("success apks: {}\n".format(success_cnt))
-    output.write("fail apks: {}\n".format(fail_cnt))
+        print("")
+        output.write('\n')
 
-    print("")
-    output.write('\n')
-
-    for k, v in fail_apks.items():
-        print("Failure: [{}]: {}".format(k, len(v)))
-        output.write("Failure: [{}]: {}\n".format(k, len(v)))
-        for apk in v:
-            print("         " + str(apk))
-            output.write("         " + str(apk) + "\n")
+        for k, v in fail_apks.items():
+            print("Failure: [{}]: {}".format(k, len(v)))
+            output.write("Failure: [{}]: {}\n".format(k, len(v)))
+            for apk in v:
+                print("         " + str(apk))
+                output.write("         " + str(apk) + "\n")
+        output.close()
