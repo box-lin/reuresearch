@@ -116,7 +116,15 @@ if __name__ == "__main__":
         for k, v in fail_apks.items():
             print("Failure: [{}]: {}".format(k, len(v)))
             output.write("Failure: [{}]: {}\n".format(k, len(v)))
-            for apk in v:
-               # print("         " + str(apk))
-                output.write("         " + str(apk) + "\n")
+
+        output.write('\n')
+        output.write('------------------------- details -----------------------------\n')
+        
+
+        for k, v in fail_apks.items():
+             output.write("Failure: [{}]: {}\n".format(k, len(v)))
+             for apk in v:
+                 output.write("         " + str(apk) + "\n")
+
+
         output.close()
