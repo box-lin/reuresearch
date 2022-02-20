@@ -4,7 +4,16 @@ import re
 import sys
 import collections
 
+"""
+Cases of Success:
+    1. logcat content with '--------- beginning of /dev/log/main' and monkey no content
+    2. logcat and monkey all did not found crash keyword
 
+Cases of Fail:
+    1. logcat size is 0
+    2. locat size > 0 and found crash in monkey
+    
+"""
 if __name__ == "__main__":
     rootdir = sys.argv[1]
 
