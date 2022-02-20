@@ -1,6 +1,6 @@
 ===================== Runtime Results for <API27Benign2019> =====================
-total Apks: 0
-success apks: 0
+total Apks: 1322
+success apks: 1322
 fail apks: 0
 
 

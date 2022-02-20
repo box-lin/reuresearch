@@ -8,7 +8,7 @@ import collections
  
 
 def is_no_fail(text):
-    return text.find('Crash') < 0 and text.find('Fail') < 0 and text.find('crash') < 0 and  text.find('fail') < 0 and text.find('CRASH') < 0 
+    return text.find('CRASH') < 0 
 
 def is_fail(text):
     return not is_no_fail(text)   
@@ -40,7 +40,7 @@ if __name__ == "__main__":
             f.close()
             
             fulladdress = logcat_address 
-
+            monkey_info = ""
 
             # read monkey
             try:
@@ -58,7 +58,7 @@ if __name__ == "__main__":
                 # otherwise, consider this is a success one 
                 if len(logcat_info) <=  2:
                     fail_apks['Crash Immdiately'].add(apkname)
-                elif len(logcat_info) > 2 and is_no_fail(logcat_info):
+                elif logcat_info.find('<') >= 0 and logcat_info.find('>') >= 0 and is_no_fail(logcat_info):
                     success.add(apkname)
                 continue
             
@@ -69,14 +69,14 @@ if __name__ == "__main__":
                 continue
             
             # case 2: monkey info empty and locat no fail keyword it is sucess
-            if len(logcat_info) > 0 and len(monkey_info) == 0 and is_no_fail(logcat_info):
+            if logcat_info.find('<') >= 0 and logcat_info.find('>') >= 0 and (len(monkey_info) == 0 or is_no_fail(monkey_info)):
                 success.add(apkname)
                 continue 
             
-            # general case when no error keyword found 
+            # up to here if error message found consider a success
             if is_no_fail(logcat_info) and is_no_fail(monkey_info):
                 success.add(apkname)
-                continue 
+                continue
             
             # general case when error keyword found
             if is_fail(logcat_info) or is_fail(monkey_info):

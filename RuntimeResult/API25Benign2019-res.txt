@@ -1,6 +1,6 @@
 ===================== Runtime Results for <API25Benign2019> =====================
-total Apks: 4
-success apks: 4
+total Apks: 1397
+success apks: 1397
 fail apks: 0
 
 
