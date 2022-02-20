@@ -21,7 +21,8 @@ if __name__ == "__main__":
         
         fail_apks = collections.defaultdict(set)
         success = set()
-        
+        fulladdress = ""
+
         for filename in filenames:
             
             # if current file is logcat, we do the analysis and find
@@ -38,14 +39,32 @@ if __name__ == "__main__":
             logcat_info = f.read()
             f.close()
             
+            fulladdress = logcat_address 
+
+
             # read monkey
-            monkey_address = logcat_address[:-7] + '.monkey'
-            f = open(monkey_address, 'r', errors='ignore')
-            monkey_info = f.read()
-            f.close()
+            try:
+                monkey_address = logcat_address[:-7] + '.monkey'
+                f = open(monkey_address, 'r', errors='ignore')
+                monkey_info = f.read()
+                f.close()
+            except:
+                # no such monkey exist
+                mess = 'daemon not running; starting now at tcp:5037'
+                info = logcat_info.strip()
+                if len(info) >= 4 and info[:-4] == mess[:-4]:
+                    # not running, no record, go for next
+                    continue
+                # otherwise, consider this is a success one 
+                if len(logcat_info) <=  2:
+                    fail_apks['Crash Immdiately'].add(apkname)
+                elif len(logcat_info) > 2 and is_no_fail(logcat_info):
+                    success.add(apkname)
+                continue
             
+            # monkey exist portion
             # case 1: if length of logcat and length of monkey is zero [Crash Immdiately]
-            if len(logcat_info) == 0 and len(monkey_info) == 0:
+            if len(logcat_info) <= 2 and len(monkey_info) == 0:
                 fail_apks['Crash Immdiately'].add(apkname)
                 continue
             
@@ -75,8 +94,18 @@ if __name__ == "__main__":
                             continue
               
         # after each iteration is completed, save the result
-        cur_address = os.path.join(parent)
-        cur_address.replace('/','')
+        cut = 0
+        for i in range(len(fulladdress)-1, -1, -1):
+            if fulladdress[i] == '/':
+                cut = i
+                break
+        tmp = fulladdress[0:cut]
+        cur_address = ""
+
+        for c in tmp:
+            if c != '/':
+                cur_address += c
+
         os.system("mkdir -p RuntimeResult")
         output = open('./RuntimeResult/' + cur_address +'-res.txt', 'w')
 
@@ -114,4 +143,4 @@ if __name__ == "__main__":
                  output.write("         " + str(apk) + "\n")
 
         output.close()
-        
+        print("")        
