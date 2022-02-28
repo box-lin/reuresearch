@@ -44,7 +44,7 @@
 
 
 
-### Installation-Failure-Message-Explanation
+### Installation Failure Message Explanation
 
 | Effect                                            | Explanation                                                  | Reason                                                       |
 | ------------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
