@@ -4,15 +4,32 @@ import sys
 import re
 import collections
 
+"""
+
+Usage: python install_classify <*.txt>
+       Wrap a shell script if traverse through a dir: bash runInstallTrace.sh <dir>
+
+"""
 
 
 apk_installed = set()
 apk_failed = collections.defaultdict(set)
 
-
+INSTALL_COMPAT_MSG = {
+    "Could not access the Package Manager", "DELETE_FAILED_INTERNAL_ERROR", "INSTALL_FAILED_CONFLICTING_PROVIDER", 
+    "INSTALL_FAILED_DUPLICATE_PERMISSION", "INSTALL_FAILED_SHARED_USER_INCOMPATIBLE", "INSTALL_FAILED_UID_CHANGED",
+    "INSTALL_FAILED_UPDATE_INCOMPATIBLE", "INSTALL_PARSE_FAILED_CERTIFICATE_ENCODING", "must either specify a package size or an APK file", 
+    "INSTALL_PARSE_FAILED_MANIFEST_MALFORMED"
+}
 
 
 def print_result(out, logname):
+    """_Print the result__.
+
+    Args:
+        out (_file_): _file handler_
+        logname (_string_): _the name of the log_
+    """
 
     print("===================== Installation Results for <{}> =====================".format(str(logname)))
     out.write("===================== Installation Results for <{}> =====================\n".format(str(logname)))
@@ -54,6 +71,12 @@ def print_result(out, logname):
     
 
 def classify_each(install_item):
+    """_classify one installation_
+
+    Args:
+        install_item (_string_): _a paragraph for each installation log_
+    """
+    
     lst = install_item.splitlines()
     try:
         apk_num = lst[0].split()[4]
@@ -67,16 +90,19 @@ def classify_each(install_item):
     
     for l in lst:
         if l.startswith('Failure'):
-	    try:
-            	fail_reason = l.split()[1]
-	    except:
-                continue
-            apk_failed[fail_reason].add(apk_num)
-
-
+            try:
+                fail_reason = l.split()[1]
+            except:
+                fail_reason = "No Message"
+            finally:
+                if fail_reason not in INSTALL_COMPAT_MSG:
+                    apk_failed[fail_reason].add(apk_num)
 
 
 if __name__ == "__main__":
+    
+    """_Main Entry, Argv[1] is the .txt installation file address_
+    """
 
     log_name = sys.argv[1]
     with open(log_name,'r') as f:
