@@ -105,7 +105,7 @@ if __name__ == "__main__":
     """
 
     log_name = sys.argv[1]
-    with open(log_name,'r') as f:
+    with open(log_name,'r', errors='ignore') as f:
         line = f.readline()
  
         item, flag = "", False
