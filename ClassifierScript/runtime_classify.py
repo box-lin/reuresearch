@@ -134,13 +134,20 @@ if __name__ == "__main__":
 
         print("")
         output.write('\n')
+        print('<-------------- Fail effect ----------------->')
+        output.write('<-------------- Fail effect ----------------->' +'\n')
 
         for k, v in fail_apks.items():
             print("Failure: [{}]: {}".format(k, len(v)))
             output.write("Failure: [{}]: {}\n".format(k, len(v)))
+            
+        output.write('\n')
+        output.write('------------------------- success details -----------------------------\n')
+        for apk in success:
+            output.write("         " + str(apk) + "\n")
 
         output.write('\n')
-        output.write('------------------------- details -----------------------------\n')
+        output.write('------------------------- fail details -----------------------------\n')
         
 
         for k, v in fail_apks.items():

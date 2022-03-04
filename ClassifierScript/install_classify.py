@@ -60,10 +60,14 @@ def print_result(out, logname):
         print('Failure ' + str(k) + ": " + str(len(v)))
         out.write('Failure ' + str(k) + ": " + str(len(v)) +'\n')
 
+    out.write('\n')
+    out.write('------------------------- success details -----------------------------\n')
+    for apk in apk_installed:
+        out.write("       " + str(apk) + '\n')
   
     # write very detail apks in each failure 
     out.write('\n')
-    out.write('------------------------- details -----------------------------\n')
+    out.write('------------------------- fail details -----------------------------\n')
     for k, v in apk_failed.items():
         out.write('Failure ' + str(k) + ": " + str(len(v)) +'\n')
         for apk in v:
