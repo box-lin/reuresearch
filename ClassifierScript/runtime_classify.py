@@ -90,10 +90,12 @@ if __name__ == "__main__":
                             short_msg = monkey_info_lst[i+1]
                             try:
                                 failure_name = short_msg.split()[3] 
-                                fail_apks[failure_name].add(apkname)
                             except:
-                                continue   
+                                failure_name = 'NO_MESSAGE'
+                            finally:
+                                fail_apks[failure_name].add(apkname)
                         except:
+                            fail_apks['NO_MESSAGE'].add(apkname)
                             continue
               
         # after each iteration is completed, save the result

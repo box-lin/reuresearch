@@ -1,8 +1,0 @@
-===================== Installation Results for <Installation_benign2019.api27> =====================
-total apks: 2262
-success apks: 2262
-fail apks: 0
-
-<-------------- Fail effect ----------------->
-
-------------------------- details -----------------------------

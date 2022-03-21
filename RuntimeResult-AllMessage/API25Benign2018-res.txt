@@ -1,7 +1,0 @@
-===================== Runtime Results for <API25Benign2018> =====================
-total Apks: 1912
-success apks: 1912
-fail apks: 0
-
-
-------------------------- details -----------------------------

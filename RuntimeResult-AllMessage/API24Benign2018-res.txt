@@ -1,7 +1,0 @@
-===================== Runtime Results for <API24Benign2018> =====================
-total Apks: 1433
-success apks: 1433
-fail apks: 0
-
-
-------------------------- details -----------------------------
