@@ -8,9 +8,6 @@ import collections
 """
 Usage: python runtime_classify <API19/Malware2018/.apk*>
 """
- 
-
-RUNTIME_COMPAT_MSG = {}
 
 
 def is_no_fail(text):

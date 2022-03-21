@@ -15,12 +15,12 @@ Usage: python install_classify <*.txt>
 apk_installed = set()
 apk_failed = collections.defaultdict(set)
 
-INSTALL_COMPAT_MSG = {
-    "Could not access the Package Manager", "DELETE_FAILED_INTERNAL_ERROR", "INSTALL_FAILED_CONFLICTING_PROVIDER", 
-    "INSTALL_FAILED_DUPLICATE_PERMISSION", "INSTALL_FAILED_SHARED_USER_INCOMPATIBLE", "INSTALL_FAILED_UID_CHANGED",
-    "INSTALL_FAILED_UPDATE_INCOMPATIBLE", "INSTALL_PARSE_FAILED_CERTIFICATE_ENCODING", "must either specify a package size or an APK file", 
-    "INSTALL_PARSE_FAILED_MANIFEST_MALFORMED"
-}
+# INSTALL_COMPAT_MSG = {
+#     "Could not access the Package Manager", "DELETE_FAILED_INTERNAL_ERROR", "INSTALL_FAILED_CONFLICTING_PROVIDER", 
+#     "INSTALL_FAILED_DUPLICATE_PERMISSION", "INSTALL_FAILED_SHARED_USER_INCOMPATIBLE", "INSTALL_FAILED_UID_CHANGED",
+#     "INSTALL_FAILED_UPDATE_INCOMPATIBLE", "INSTALL_PARSE_FAILED_CERTIFICATE_ENCODING", "must either specify a package size or an APK file", 
+#     "INSTALL_PARSE_FAILED_MANIFEST_MALFORMED"
+# }
 
 
 def print_result(out, logname):
@@ -97,10 +97,9 @@ def classify_each(install_item):
             try:
                 fail_reason = l.split()[1]
             except:
-                fail_reason = "No Message"
+                fail_reason = "[NO_MESSAGE]"
             finally:
-                if fail_reason not in INSTALL_COMPAT_MSG:
-                    apk_failed[fail_reason].add(apk_num)
+                apk_failed[fail_reason].add(apk_num)
 
 
 if __name__ == "__main__":
