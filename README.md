@@ -6,6 +6,9 @@
 
 - [Runtime Failure Message Explanation](#Runtime-Failure-Message-Explanation)
 
+- Database Schema
+
+![](Schema/ERdiagram.png)
 
 
 **Goal**
