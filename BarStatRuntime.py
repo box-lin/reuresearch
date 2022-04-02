@@ -3,7 +3,8 @@ from BarStatIns import INCOMPAT_MSG
 
 
 INCOMPAT_MSG_KEYWORDS = {'verifyerror', 'security', 'native', 'nullpointer', 'activitynotfound', 'noclass', 'unsatisfiedlink', 
-                         }
+                         'illegalmonitor, io', 'no_message'}
+
 
 def get_year(address):
     name = address.lower()

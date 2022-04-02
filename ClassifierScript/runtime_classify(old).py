@@ -11,10 +11,7 @@ Usage: python runtime_classify <API19/Malware2018/.apk*>
 
 
 def is_no_fail(text):
-    s = text
-   # should i consider any keywords about crash? looks like there is some messages contains  crash as a subsubsting
-   # s = text.lower()
-    return s.find('CRASH') < 0 
+    return text.find('CRASH') < 0 
 
 def is_fail(text):
     return not is_no_fail(text)   
@@ -63,7 +60,7 @@ if __name__ == "__main__":
                     continue
                 # otherwise, consider this is a success one 
                 if len(logcat_info) <=  2:
-                    fail_apks['Crash_Immdiately'].add(apkname)
+                    fail_apks['Crash Immdiately'].add(apkname)
                 elif logcat_info.find('<') >= 0 and logcat_info.find('>') >= 0 and is_no_fail(logcat_info):
                     success.add(apkname)
                 continue
@@ -71,7 +68,7 @@ if __name__ == "__main__":
             # monkey exist portion
             # case 1: if length of logcat and length of monkey is zero [Crash Immdiately]
             if len(logcat_info) <= 2 and len(monkey_info) == 0:
-                fail_apks['Crash_Immdiately'].add(apkname)
+                fail_apks['Crash Immdiately'].add(apkname)
                 continue
             
             # case 2: monkey info empty and locat no fail keyword it is sucess
@@ -87,10 +84,8 @@ if __name__ == "__main__":
             # general case when error keyword found
             if is_fail(logcat_info) or is_fail(monkey_info):
                 monkey_info_lst = monkey_info.splitlines()
-                found_msg = False
                 for i, line in enumerate(monkey_info_lst):
                     if line.find('CRASH') > 0:
-                        found_msg = True
                         try:
                             short_msg = monkey_info_lst[i+1]
                             try:
@@ -102,11 +97,6 @@ if __name__ == "__main__":
                         except:
                             fail_apks['NO_MESSAGE'].add(apkname)
                             continue
-
-               # should I say this is crash but no message if no CRASH founded but (crash, CraSh,.. other combinations) in monkey?   
-               # if not found_msg and is_fail(monkey_info):
-                   # fail_apks['NO_MESSAGE'].add(apkname)
-
               
         # after each iteration is completed, save the result
         cut = 0
