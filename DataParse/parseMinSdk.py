@@ -27,7 +27,7 @@ def write():
     output = open('./minsdkdata/' + txtname, 'w')
     
     for apkname, minsdklevel in data:
-        output.write(typapk, apkyear, apkname, minsdklevel)
+        output.write(typapk + " " + apkyear + " " +  apkname + " " + minsdklevel + "\n")
     output.close()
 
 def main():
@@ -36,8 +36,13 @@ def main():
             glbl_address = os.path.join(parent, fname)
             # run this apk by: bash getminsdk.sh glbl_address
             cmd = "bash getminsdk.sh " + glbl_address
-            minsdk = subprocess.check_output(cmd, shell=True)
-            tup = (fname, str(int(minsdk, 16)))
+            try:
+            	minsdk = str(int(subprocess.check_output(cmd, shell=True),16))
+            except:
+	        # if the return value is not convertable to int, disregard and continue
+                print(glbl_address, "fail getminsdk return:", subprocess.check_output(cmd,shell=True)) 
+		continue
+	    tup = (fname, minsdk)
             data.add(tup)
     write()
     
