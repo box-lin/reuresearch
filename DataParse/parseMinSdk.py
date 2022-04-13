@@ -37,13 +37,13 @@ def main():
             # run this apk by: bash getminsdk.sh glbl_address
             cmd = "bash getminsdk.sh " + glbl_address
             try:
-            	minsdk = str(int(subprocess.check_output(cmd, shell=True),16))
+                minsdk = str(int(subprocess.check_output(cmd, shell=True),16))
             except:
 	        # if the return value is not convertable to int, disregard and continue
                 print(glbl_address, "fail getminsdk return:", subprocess.check_output(cmd,shell=True)) 
-		continue
-	    tup = (fname, minsdk)
-            data.add(tup)
+                continue
+        tup = (fname, minsdk)
+        data.add(tup)
     write()
     
 if __name__ == "__main__":

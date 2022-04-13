@@ -1,59 +1,47 @@
-DROP TABLE IF EXISTS apitoyear;
-DROP TABLE IF EXISTS apktoapi;
-DROP TABLE IF EXISTS APKminsdk;
-DROP TABLE IF EXISTS apktoyear;
-DROP TABLE IF EXISTS apkcompat;
-DROP TABLE IF EXISTS apk;
- 
-
+drop apkminsdk if exists apkminsdk
+drop apkinscompat if exists apkinscompat
+drop apkruncompat if exists apkruncompat
+drop apk if exists apk
 
 create table apk (
-    apkname varchar primary key
-);
-
-create table apkcompat(
     apkname varchar,
-    isFail boolean,
-    failMessage varchar,
-    primary key (apkname, isFail, failMessage),
-    foreign key (apkname) references APK(apkname)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE
-);
-
-create table apktoyear(
-    apkname varchar,
+    typ varchar,
     apkyear varchar,
-    primary key (apkname, apkyear),
-    foreign key (apkname) references apk(apkname)
+    apkapi varchar,
+    apiyear varchar,
+    primary key (apkname, typ)
+);
+
+-- if an apk is run compat, runMsg should be None
+create table apkruncompat(
+    apkname varchar,
+    typ varchar,
+    run_fail boolean, 
+    runMsg varchar,
+    primary key (apkname, typ, run_fail),
+    foreign key (apkname, typ) references apk(apkname, typ)
     ON DELETE CASCADE
     ON UPDATE CASCADE
 );
+
+create table apkinscompat(
+    apkname varchar,
+    typ varchar,
+    ins_fail boolean, 
+    insMsg varchar,
+    primary key (apkname, typ, ins_fail),
+    foreign key (apkname, typ) references apk(apkname, typ)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
+);
+
 
 create table apkminsdk(
     apkname varchar,
+    typ varchar,
     minsdk varchar,
-    primary key (apkname, minsdk),
-    foreign key (apkname) references apk(apkname)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE
-);
-
-create table apktoapi(
-    apkname varchar,
-    apkapi varchar,
-    primary key (apkname, apkapi),
-    foreign key (apkname) references apk(apkname)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE
-);
-
-create table apitoyear(
-    apkname varchar,
-    apkapi varchar,
-    apiyear varchar,
-    primary key (apkname, apkapi, apiyear),
-    foreign key (apkname, apkapi) references apktoapi(apkname, apkapi)
+    primary key (apkname, typ, minsdk),
+    foreign key (apkname, typ) references apk(apkname, typ)
     ON DELETE CASCADE
     ON UPDATE CASCADE
 );
