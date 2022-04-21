@@ -68,7 +68,8 @@ def apkcol_collect(info, fname_lower):
     for line in lst:
         row = line.strip()
         # start inserting
-        if row.find('apk') >= 10:
+        # if row.find('apk') >= 10:
+        if row.find('.apk') >= 0:
             apkdata[(row,typ)] = [apkyear, apkapi, apiyear]
             
 def collect_apk(path):   
@@ -188,18 +189,46 @@ def insert_compat():
                 return
             conn.commit() 
 
+
+
+def collect_sdk(path):
+    for parent,dirnames, filenames in os.walk(path):
+        for fname in filenames:
+            address = os.path.join(parent,fname)   
+            # read the txt
+            f = open(address, 'r')
+            info = f.read()
+            for line in info.splitlines():
+                lst = line.split()
+                typ = lst[0]
+                apkyear = lst[1]
+                apkname = lst[2]
+                sdk = lst[3]
+                
+                tup_key = (apkname, typ)
+                
+                apksdk[tup_key] = sdk
+            f.close()
+    print(len(apkdata),len(apksdk))
+
 def void_main():
     # just hardcode the path
     inspath = "../InstallResult"
     runpath = "../RuntimeResult"
+    sdkpath = "minsdkdata"
     collect_apk(inspath)
     collect_apk(runpath)
-    
     # insert_apkdata()
     
-    collect_compat(inspath) 
-    collect_compat(runpath) 
-    insert_compat()
+    # Insert to db for ins and run table
+    # collect_compat(inspath) 
+    # collect_compat(runpath) 
+    # insert_compat()
+    
+    # Insert to db for minsdk
+    collect_sdk(sdkpath)
+    
+     
 
 def db_connect():
     conn = None
@@ -220,5 +249,6 @@ if __name__ == "__main__":
     apkdata = {}
     apkins_compat = {}
     apkrun_compat ={}
+    apksdk = {}
     void_main()
     db_close(cur, conn)
