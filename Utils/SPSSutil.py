@@ -38,7 +38,7 @@ def get_dic():
             api = str(api)
             apiyear = get_apiyear(api)
             # minsdk the lowest level
-            for minsdk in range(0, 28): 
+            for minsdk in range(0, 29): 
                 minsdk = str(minsdk) 
                 tupkey = (minsdk, api, apkyear, apiyear)
                 dic[tupkey] = [0,0]
