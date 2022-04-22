@@ -3,38 +3,35 @@
 **Catalog**
 
 - [Installation Failure Message Explanation](#Installation-Failure-Message-Explanation)
-
 - [Runtime Failure Message Explanation](#Runtime-Failure-Message-Explanation)
-
 - Scripts: 
 
-`bash ClassifierScript/runInstallTraces.sh <Folder>`  - **Analayze the installation logs inside of <Folder> and save the .txt result in InstallResult dir**
-
-`python ClassifierScript/install_classify.py <log>` **Analayze a single log and save the .txt result in InstallResult dir** 
-
-`python ClassifierScript/runtime_classify.py <Folder>` **Analyze the runtime logs inside of <Folder> and save the .txt result in RuntimeResult dir** 
-
-`python Stats.py <Folder>` - **Obtain the result.txt from <Folder> and print # of success and success rate, # of fails and fail rate**
-
-
-`python BarStatIns.py <InstallResult>` **Calculate the distribution for the failures and print to the console.**
-
+| Commands                                               | Functions                                                    |
+| ------------------------------------------------------ | ------------------------------------------------------------ |
+| `bash ClassifierScript/runInstallTraces.sh <Folder>`   | Analyze the installation logs inside of **Folder** and save the .txt result in InstallResult dir |
+| `python ClassifierScript/install_classify.py <log>`    | Analyze a **single log** and save the .txt result in InstallResult dir |
+| `python ClassifierScript/runtime_classify.py <Folder>` | Analyze the runtime logs inside of **Folder** and save the .txt result in RuntimeResult dir |
+| `python Stats.py <InstallResult/RuntimeResult>`        | Obtain the result*.txt from **Folder** and print # of success and success rate, # of fails and fail rate |
+| `python BarStatIns.py <InstallResult>`                 | Calculate the installation distribution for the failures and print to the console. |
+| `python BarStatRuntime.py <RuntimeResult>`             | Calculate the runtime distribution for the failures and print to the console. |
+|                                                        |                                                              |
 
 **Goal**
 
 1. Compute the android installation/runtime compatibility for Benign apps 2018-2019 and Malware apps 2010-2019.
 
-2. Statisticly analysis the Installation/Runtime Compatibility for RQs (1-6 see research paper)
+2. Statistically analysis the Installation/Runtime Compatibility for RQs (1-6 see research paper)
 
 3. Develop new computation method that computes the compatibility for multi-apk for 2018-2019 andriod apps
 	
 	**Installation-time**
+	
 	-	Refer to installation log
 	-	For each apk that failed at installation on API X as found from the log
 	-	Find all other apks that share the same package name from the large app list 
 	-	For each of such found apks, install it on API X 
 	-	If any of such installation succeeds, then this app (called multi-apk-compatible (MAC) app) should not be considered unable to install at API X
-
+	
 	**Run-time**
 	-	Given an app, we run it on multiple different platforms (device configuration + API level) 
 	-	If the app did not produce the ‘effects’ in at least one platform A, then we know this app probably does not have application/logic errors
@@ -44,7 +41,7 @@
 	-	Removing camera
 	-	Change screen size
 	-	Change SDK version
-
+	
 	**RQs (also answered for benign apps and malware separately; then we can compare between these two categories)**
 	-	RQ1: Distribution of #apks per app
 	-	1 for the majority of the apps
