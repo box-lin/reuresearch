@@ -18,10 +18,19 @@ def get_stat(info, address):
     
     print(address)
     lst = info.splitlines()
+    totalcnt, successcnt, failcnt = 0, 0, 0
     for line in lst:
         if line.startswith("total") or line.startswith("success") or line.startswith("fail"):
             items = line.split()
             print("{}: {}".format(items[0], items[2]))
+            if line.startswith("total"):
+                totalcnt = int(items[2])
+            elif line.startswith("success"):
+                successcnt = int(items[2])
+            elif line.startswith("fail"):
+                failcnt = int(items[2])
+    print('Success rate: ', float(successcnt/totalcnt))
+    print('Fail rate: ', float(failcnt/totalcnt))
     print("")
 
 if __name__ == "__main__":

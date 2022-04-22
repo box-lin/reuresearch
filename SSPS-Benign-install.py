@@ -66,6 +66,7 @@ if __name__ == "__main__":
         for fname in filenames:
             fname_lower = fname.lower()
             if fname_lower.find('benign') < 0: continue
+            print('scanning: ', fname_lower)
             address = os.path.join(parent,fname)  
             # read the txt
             f = open(address, 'r')

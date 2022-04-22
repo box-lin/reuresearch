@@ -6,9 +6,18 @@
 
 - [Runtime Failure Message Explanation](#Runtime-Failure-Message-Explanation)
 
-- Database Schema
+- Scripts: 
 
-![](Schema/ERdiagram.png)
+`bash ClassifierScript/runInstallTraces.sh <Folder>`  - **Analayze the installation logs inside of <Folder> and save the .txt result in InstallResult dir**
+
+`python ClassifierScript/install_classify.py <log>` **Analayze a single log and save the .txt result in InstallResult dir** 
+
+`python ClassifierScript/runtime_classify.py <Folder>` **Analyze the runtime logs inside of <Folder> and save the .txt result in RuntimeResult dir** 
+
+`python Stats.py <Folder>` - **Obtain the result.txt from <Folder> and print # of success and success rate, # of fails and fail rate**
+
+
+`python BarStatIns.py <InstallResult>` **Calculate the distribution for the failures and print to the console.**
 
 
 **Goal**
