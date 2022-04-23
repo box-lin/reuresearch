@@ -132,8 +132,8 @@ if __name__ == "__main__":
             rate = float(num_fail/total)
         else: 
             rate = 0.0
-        minsdk, apilevel, apkyear, apiyear = lst[0], lst[1], lst[2], lst[3]
-        cal1, cal2 = str(int(apiyear) - int(apkyear)), str(int(apilevel) - int(minsdk))
+        minsdk, apilevel, apkyear, apiyear = int(lst[0]), int(lst[1]), int(lst[2]), int(lst[3])
+        cal1, cal2 = int(apiyear) - int(apkyear), int(apilevel) - int(minsdk)
         ws.append([rate, minsdk, apilevel, apkyear, apiyear, cal1, cal2])
     wb.save('Data/InstallSPSS-2018-2019-all_benign.xlsx')
     print("Result write into Data/InstallSPSS-2018-2019-all_benign.xlsx completed!")
