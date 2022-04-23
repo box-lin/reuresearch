@@ -6,6 +6,10 @@ import csv
 from Utils import SPSSutil
 from openpyxl import Workbook, workbook, load_workbook
 
+
+LIBRARY = 'INSTALL_FAILED_MISSING_SHARED_LIBRARY'
+
+
 def collect_ins_success(data, fname_lower):
     listlines = data.splitlines()
     if len(listlines) <= 1: return 
@@ -17,7 +21,7 @@ def collect_ins_success(data, fname_lower):
     
     for apknamestr in listlines[1:]:
         apkname = apknamestr.strip()
-        apkinstall[(apkname, apkyear, typ)] = [True, apilevel, apiyear]
+        apkinstall[(apkname, apkyear, typ)] = [True, apilevel, apiyear, 'NONE']
         
 def collect_ins_fail(data, fname_lower):
     listlines = data.splitlines()
@@ -28,12 +32,15 @@ def collect_ins_fail(data, fname_lower):
     typ = SPSSutil.get_apktyp(fname_lower)
     apiyear = SPSSutil.get_apiyear(apilevel)
     
+    curfailmsg = ""
     for row in listlines[1:]:
         if row.startswith('Failure'):
+            curfailmsg = row.split()[1][1:-2]
             continue
         else:
             apkname = row.strip()
-            apkinstall[(apkname, apkyear, typ)] = [False, apilevel, apiyear]
+            apkinstall[(apkname, apkyear, typ)] = [False, apilevel, apiyear, curfailmsg]
+
 
 if __name__ == "__main__":
     # (apk, typ, year):boolean
@@ -98,12 +105,14 @@ if __name__ == "__main__":
     ans = SPSSutil.get_dic()
     for lst1, lst2 in buffer.items():
         apkname, apkyear, typ = lst1 
-        isCompat, apilevel, apiyear, minsdk = lst2    
+        isCompat, apilevel, apiyear, curmsg, minsdk = lst2    
+        
         tupkey = (minsdk, apilevel, apkyear, apiyear)
         if isCompat:
             ans[tupkey][0] += 1
         else:
-            ans[tupkey][1] += 1
+            if curmsg == LIBRARY:
+                ans[tupkey][1] += 1
 
             
             
@@ -135,7 +144,25 @@ if __name__ == "__main__":
         minsdk, apilevel, apkyear, apiyear = lst[0], lst[1], lst[2], lst[3]
         cal1, cal2 = str(int(apiyear) - int(apkyear)), str(int(apilevel) - int(minsdk))
         ws.append([rate, minsdk, apilevel, apkyear, apiyear, cal1, cal2])
-    wb.save('Data/InstallSPSS-2018-2019-all_benign.xlsx')
-    print("Result write into Data/InstallSPSS-2018-2019-all_benign.xlsx completed!")
+    wb.save('Data/InstallSPSS-2018-2019-library_benign.xlsx')
+    print("Result write into Data/InstallSPSS-2018-2019-library_benign.xlsx completed!")
+  
+  
+    # print # of fail
+    failcnt = 0
+    librarycnt = 0
+    succcnt = 0
+    for lst1, lst2 in buffer.items():
+        apkname, apkyear, typ = lst1 
+        isCompat, apilevel, apiyear, curmsg, minsdk = lst2  
+        if curmsg == LIBRARY:
+            librarycnt += 1
+        if not isCompat:
+            failcnt += 1
+        else:
+            succcnt += 1
+    print('Numbers of Success apk: ', succcnt)      
+    print('Numbers of Fail apk: ', failcnt)
+    print('Missing Shared Liberary apk: ', librarycnt)
     
-        
+    
