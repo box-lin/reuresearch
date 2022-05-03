@@ -20,41 +20,41 @@
 
 **IIR figure for benign Installation 2010 - 2019**
 
-![](/Figures/IIRbenignIns2010-2019.png)
+![](Figures/IIRbenignIns2010-2019.png)
 
 **IIR figure for benign Runtime 2010 - 2019**
 
-![](/Figures/IIRbenignRun2010-2019.png)
+![](Figures/IIRbenignRun2010-2019.png)
 
 
 
 **IIR figure for malware Installation 2018 - 2019**
 
-![](/Figures/IIRmalwareIns2018-2019.png)
+![](Figures/IIRmalwareIns2018-2019.png)
 
 **IIR figure for malware Installation 2010 - 2019**
 
-![](/Figures/IIRmalwareRun2010-2019.png)
+![](Figures/IIRmalwareRun2010-2019.png)
 
 
 
 **Bar Figure for benign  Installation 2010 - 2019**
 
-![](/Figures/InsBarBenign2010-2019.png)
+![](Figures/InsBarBenign2010-2019.png)
 
 **Bar Figure for benign  runtime 2010 - 2019**
 
-![](/Figures/RunBarBenign2010-2019.png)
+![](Figures/RunBarBenign2010-2019.png)
 
 
 
 **Bar Figure for malware Installation 2018 - 2019**
 
-![](/Figures/InsBarMalware2018-2019.png)
+![](Figures/InsBarMalware2018-2019.png)
 
 **Bar Figure for malware runtime 2010 - 2019**
 
-![](/Figures/RunBarMalware2010-2019.png)
+![](Figures/RunBarMalware2010-2019.png)
 
 
 
@@ -78,7 +78,7 @@
 
 **SSPS for malware Installation ABI**
 
-![](Figures/SPSSmalwareInsAbi.png)
+![](Figures/SPSSmalwareInsABI.png)
 
 
 
