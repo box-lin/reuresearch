@@ -1,4 +1,5 @@
 import os
+from openpyxl import Workbook, workbook, load_workbook
 import os.path
 
 
@@ -114,3 +115,34 @@ def specificTablePrint(table):
         total, failCnt = stat 
         failRate = float(failCnt/total) if total != 0 else 0 
         print("{}\t failRate: {}".format(lst, failRate))  
+        
+
+def originalTableWrite2Excel(table, location):
+    wb = Workbook()
+    ws = wb.active
+    ws.title = 'SSPS'
+    ws.append(['failure rate', 'min sdk', 'api year', 'year', 'api\'s year ', 'api-year', 'api-min'])
+    for lst, stat in table.items():
+        num_succ, num_fail = stat 
+        total = num_succ + num_fail
+        rate = float(num_fail/total) if total != 0 else 0
+        minsdk, apilevel, apkyear, apiyear = int(lst[0]), int(lst[1]), int(lst[2]), int(lst[3])
+        cal1, cal2 = int(apiyear) - int(apkyear), int(apilevel) - int(minsdk)
+        ws.append([rate, minsdk, apilevel, apkyear, apiyear, cal1, cal2])
+    wb.save(location)
+    print("write to {} completed!".format(location))
+
+
+def specificTableWrite2Excel(table, location):
+    wb = Workbook()
+    ws = wb.active
+    ws.title = 'SSPS'
+    ws.append(['failure rate', 'min sdk', 'api year', 'year', 'api\'s year ', 'api-year', 'api-min'])
+    for lst, stat in table.items():
+        total, failCnt = stat 
+        rate = float(failCnt/total) if total != 0 else 0 
+        minsdk, apilevel, apkyear, apiyear = int(lst[0]), int(lst[1]), int(lst[2]), int(lst[3])
+        cal1, cal2 = int(apiyear) - int(apkyear), int(apilevel) - int(minsdk)
+        ws.append([rate, minsdk, apilevel, apkyear, apiyear, cal1, cal2])
+    wb.save(location)
+    print("write to {} completed!".format(location))

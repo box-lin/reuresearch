@@ -131,6 +131,12 @@ def void_main():
     updateTable("InstallResult", malwareMinSdkDic, malwareInstallTable, "malware")
     updateTable("RuntimeResult", malwareMinSdkDic, malwareRuntimeTable, "malware")
     
+    SPSSutil.originalTableWrite2Excel(benignInstallTable, "SSPS/benignInstallTable.xlsx")
+    SPSSutil.originalTableWrite2Excel(benignRuntimeTable, "SSPS/benignRuntimeTable.xlsx")
+    SPSSutil.originalTableWrite2Excel(malwareInstallTable, "SSPS/malwareInstallTable.xlsx")
+    SPSSutil.originalTableWrite2Excel(malwareRuntimeTable, "SSPS/malwareRuntimeTable.xlsx")
+    
+    
     """Now focuse on specific type of failures, define msgs and transform tables
        now the below tables with value = [total, 0]
     """ 
@@ -158,7 +164,16 @@ def void_main():
     updateTable("RuntimeResult", malwareMinSdkDic, malwareRuntimeTableVerify, "malware", verifyMsg)
     updateTable("RuntimeResult", malwareMinSdkDic, malwareRuntimeTableNative, "malware", nativeMsg)
     
-    SPSSutil.specificTablePrint(benignInstallTableABI)
+    
+    SPSSutil.specificTableWrite2Excel(benignInstallTableABI, "SSPS/benignInstallTableABI.xlsx")
+    SPSSutil.specificTableWrite2Excel(benignInstallTableLibrary, "SSPS/benignInstallTableLibrary.xlsx")
+    SPSSutil.specificTableWrite2Excel(benignRuntimeTableVerify, "SSPS/benignRuntimeTableVerify.xlsx")
+    SPSSutil.specificTableWrite2Excel(benignRuntimeTableNative, "SSPS/benignRuntimeTableNative.xlsx")
+    SPSSutil.specificTableWrite2Excel(malwareInstallTableABI, "SSPS/malwareInstallTableABI.xlsx")
+    SPSSutil.specificTableWrite2Excel(malwareInstallTableLibrary, "SSPS/malwareInstallTableLibrary.xlsx")
+    SPSSutil.specificTableWrite2Excel(malwareRuntimeTableVerify, "SSPS/malwareRuntimeTableVerify.xlsx")
+    SPSSutil.specificTableWrite2Excel(malwareRuntimeTableNative, "SSPS/malwareRuntimeTableNative.xlsx")
+
 
 if __name__ == "__main__":
     void_main()
