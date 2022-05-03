@@ -60,37 +60,37 @@
 
 **SSPS for benign Installation ABI**
 
-![](Figures\SPSSbenignInsABI.png)
+![](Figures/SPSSbenignInsABI.png)
 
 
 
 **SSPS for benign Installation All**
 
-![](Figures\SPSSbenignInsAll.png)
+![](Figures/SPSSbenignInsAll.png)
 
 
 
 **SSPS for benign Installation Library**
 
-![](Figures\SPSSbenignInsLibrary.png)
+![](Figures/SPSSbenignInsLibrary.png)
 
 
 
 **SSPS for malware Installation ABI**
 
-![](Figures\SPSSmalwareInsAbi.png)
+![](Figures/SPSSmalwareInsAbi.png)
 
 
 
 **SSPS for malware Installation All**
 
-![](Figures\SSPSmalwareInsAll.png)
+![](Figures/SSPSmalwareInsAll.png)
 
 
 
 **SSPS for malware Installation Library**
 
-![](Figures\SPSSmalwareInsLibrary.png)
+![](Figures/SPSSmalwareInsLibrary.png)
 
 
 
