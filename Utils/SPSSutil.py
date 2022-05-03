@@ -26,6 +26,7 @@ def get_apiyear(apiyear):
     return dic[apiyear] # impossible keyerror
 
 
+# serve for 2018-2019 benign (install and run) and malware installation
 def get_dic():
     dic = {}
     apis = [i for i in range(27,18, -1)]
@@ -43,3 +44,23 @@ def get_dic():
                 tupkey = (minsdk, api, apkyear, apiyear)
                 dic[tupkey] = [0,0]
     return dic
+
+# apkyear 2010-2019
+def get_dic_full():
+    dic = {}
+    apis = [i for i in range(27,18, -1)]
+    apis.remove(20)
+    # upper level
+    for apkyear in range(2010,2020):
+        apkyear = str(apkyear)
+        # api and apiyear same level
+        for api in apis:
+            api = str(api)
+            apiyear = get_apiyear(api)
+            # minsdk the lowest level
+            for minsdk in range(0, 29): 
+                minsdk = str(minsdk) 
+                tupkey = (minsdk, api, apkyear, apiyear)
+                dic[tupkey] = [0,0]
+    return dic
+

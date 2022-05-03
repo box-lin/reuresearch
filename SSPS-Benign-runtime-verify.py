@@ -6,6 +6,7 @@ import csv
 from Utils import SPSSutil
 from openpyxl import Workbook, workbook, load_workbook
 
+
 def collect_ins_success(data, fname_lower):
     listlines = data.splitlines()
     if len(listlines) <= 1: return 
@@ -17,7 +18,7 @@ def collect_ins_success(data, fname_lower):
     
     for apknamestr in listlines[1:]:
         apkname = apknamestr.strip()
-        apkinstall[(apkname, apkyear, typ)] = [True, apilevel, apiyear]
+        apkinstall[(apkname, apkyear, typ)] = [True, apilevel, apiyear, 'NONE']
         
 def collect_ins_fail(data, fname_lower):
     listlines = data.splitlines()
@@ -28,18 +29,21 @@ def collect_ins_fail(data, fname_lower):
     typ = SPSSutil.get_apktyp(fname_lower)
     apiyear = SPSSutil.get_apiyear(apilevel)
     
+    curfailmsg = ""
     for row in listlines[1:]:
         if row.startswith('Failure'):
+            curfailmsg = row.split()[1][1:-2]
             continue
         else:
             apkname = row.strip()
-            apkinstall[(apkname, apkyear, typ)] = [False, apilevel, apiyear]
+            apkinstall[(apkname, apkyear, typ)] = [False, apilevel, apiyear, curfailmsg]
+
 
 if __name__ == "__main__":
-    # (apk, typ, year):boolean
+    # (apk, typ, year):[isCompat, apilevel, apiyear, failMsg]
     apkinstall = {}
     apksdk = {}
-    log_path = "InstallResult"
+    log_path = "RuntimeResult"
     sdk_path = "DataParse/benign-minsdk(2018-2019)"
     
     # prepare the apksdk dictionary
@@ -98,12 +102,13 @@ if __name__ == "__main__":
     ans = SPSSutil.get_dic()
     for lst1, lst2 in buffer.items():
         apkname, apkyear, typ = lst1 
-        isCompat, apilevel, apiyear, minsdk = lst2    
+        isCompat, apilevel, apiyear, curmsg, minsdk = lst2    
         tupkey = (minsdk, apilevel, apkyear, apiyear)
         if isCompat:
             ans[tupkey][0] += 1
         else:
-            ans[tupkey][1] += 1
+            if curmsg == "java.lang.VerifyError":
+                ans[tupkey][1] += 1
 
             
             
@@ -135,5 +140,22 @@ if __name__ == "__main__":
         minsdk, apilevel, apkyear, apiyear = int(lst[0]), int(lst[1]), int(lst[2]), int(lst[3])
         cal1, cal2 = int(apiyear) - int(apkyear), int(apilevel) - int(minsdk)
         ws.append([rate, minsdk, apilevel, apkyear, apiyear, cal1, cal2])
-    wb.save('Data/InstallSPSS-2018-2019-all_benign.xlsx')
-    print("Result write into Data/InstallSPSS-2018-2019-all_benign.xlsx completed!")
+    wb.save('Data/RunSPSS-2018-2019-verify_benign.xlsx')
+    print("Result write into Data/RunSPSS-2018-2019-verify_benign.xlsx!")
+    
+    # print # of fail
+    failcnt = 0
+    librarycnt = 0
+    succcnt = 0
+    for lst1, lst2 in buffer.items():
+        apkname, apkyear, typ = lst1 
+        isCompat, apilevel, apiyear, curmsg, minsdk = lst2  
+        if curmsg == "java.lang.VerifyError":
+            librarycnt += 1
+        if not isCompat:
+            failcnt += 1
+        else:
+            succcnt += 1
+    print('Numbers of Success apk: ', succcnt)      
+    print('Numbers of Fail apk: ', failcnt)
+    print('Verify Error apk: ', librarycnt)

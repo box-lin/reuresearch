@@ -39,7 +39,7 @@ if __name__ == "__main__":
     # (apk, typ, year):boolean
     apkinstall = {}
     apksdk = {}
-    log_path = "InstallResult"
+    log_path = "RuntimeResult"
     sdk_path = "DataParse/benign-minsdk(2018-2019)"
     
     # prepare the apksdk dictionary
@@ -135,5 +135,22 @@ if __name__ == "__main__":
         minsdk, apilevel, apkyear, apiyear = int(lst[0]), int(lst[1]), int(lst[2]), int(lst[3])
         cal1, cal2 = int(apiyear) - int(apkyear), int(apilevel) - int(minsdk)
         ws.append([rate, minsdk, apilevel, apkyear, apiyear, cal1, cal2])
-    wb.save('Data/InstallSPSS-2018-2019-all_benign.xlsx')
-    print("Result write into Data/InstallSPSS-2018-2019-all_benign.xlsx completed!")
+    wb.save('Data/RunSPSS-2018-2019-all_benign.xlsx')
+    print("Result write into Data/RunSPSS-2018-2019-all_benign.xlsx completed!")
+    
+    
+    
+    # print # of fail
+    # failcnt = 0
+    # librarycnt = 0
+    # succcnt = 0
+    # for lst1, lst2 in buffer.items():
+    #     apkname, apkyear, typ = lst1 
+    #     isCompat, apilevel, apiyear, minsdk = lst2  
+    #     if not isCompat:
+    #         failcnt += 1
+    #     else:
+    #         succcnt += 1
+    # print('Numbers of Success apk: ', succcnt)      
+    # print('Numbers of Fail apk: ', failcnt)
+    
