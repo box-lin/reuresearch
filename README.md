@@ -16,6 +16,86 @@
 | `python BarStatRuntime.py <RuntimeResult>`             | Calculate the runtime distribution for the failures and print to the console. |
 |                                                        |                                                              |
 
+### Statistic Result
+
+**IIR figure for benign Installation 2010 - 2019**
+
+![](/Figures/IIRbenignIns2010-2019.png)
+
+**IIR figure for benign Runtime 2010 - 2019**
+
+![](/Figures/IIRbenignRun2010-2019.png)
+
+
+
+**IIR figure for malware Installation 2018 - 2019**
+
+![](/Figures/IIRmalwareIns2018-2019.png)
+
+**IIR figure for malware Installation 2010 - 2019**
+
+![](/Figures/IIRmalwareRun2010-2019.png)
+
+
+
+**Bar Figure for benign  Installation 2010 - 2019**
+
+![](/Figures/InsBarBenign2010-2019.png)
+
+**Bar Figure for benign  runtime 2010 - 2019**
+
+![](/Figures/RunBarBenign2010-2019.png)
+
+
+
+**Bar Figure for malware Installation 2018 - 2019**
+
+![](/Figures/InsBarMalware2018-2019.png)
+
+**Bar Figure for malware runtime 2010 - 2019**
+
+![](/Figures/RunBarMalware2010-2019.png)
+
+
+
+**SSPS for benign Installation ABI**
+
+![](Figures\SPSSbenignInsABI.png)
+
+
+
+**SSPS for benign Installation All**
+
+![](Figures\SPSSbenignInsAll.png)
+
+
+
+**SSPS for benign Installation Library**
+
+![](Figures\SPSSbenignInsLibrary.png)
+
+
+
+**SSPS for malware Installation ABI**
+
+![](Figures\SPSSmalwareInsAbi.png)
+
+
+
+**SSPS for malware Installation All**
+
+![](Figures\SSPSmalwareInsAll.png)
+
+
+
+**SSPS for malware Installation Library**
+
+![](Figures\SPSSmalwareInsLibrary.png)
+
+
+
+
+
 **Goal**
 
 1. Compute the android installation/runtime compatibility for Benign apps 2018-2019 and Malware apps 2010-2019.
