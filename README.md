@@ -11,10 +11,13 @@
 | `bash ClassifierScript/runInstallTraces.sh <Folder>`   | Analyze the installation logs inside of **Folder** and save the .txt result in InstallResult dir |
 | `python ClassifierScript/install_classify.py <log>`    | Analyze a **single log** and save the .txt result in InstallResult dir |
 | `python ClassifierScript/runtime_classify.py <Folder>` | Analyze the runtime logs inside of **Folder** and save the .txt result in RuntimeResult dir |
+| `python DataParse/parseMinSdk.py <apks folder> <typ> <year>`         | retrived the apk's minSDKversion and save the result txt in  current directory in a generated folder|
 | `python Stats.py <InstallResult/RuntimeResult>`        | Obtain the result*.txt from **Folder** and print # of success and success rate, # of fails and fail rate |
 | `python BarStatIns.py <InstallResult>`                 | Calculate the installation distribution for the failures and print to the console. |
 | `python BarStatRuntime.py <RuntimeResult>`             | Calculate the runtime distribution for the failures and print to the console. |
-|                                                        |                                                              |
+| `python SSPSwrapper.py`                                | Retrive data from InstallResult, RuntimeResult, DataParse to calculate the SPSS distribution, saved the excel result in **SSPS folder**  |
+| `python MultiClassify.py <apkCSVlocatedFolder> <InstallResult OR RuntimeResult>` | classify multi-apk, consider app success if its apk(s) are compatible for covered API19,21-27 are otherwise fail, save result in **MultiCompatResult**|
+| **matlab scripts located in SSPS folder** |
 
 ### Statistic Result
 
