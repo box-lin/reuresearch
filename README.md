@@ -57,28 +57,29 @@
 ![](Figures/RunBarMalware2010-2019.png)
 
 
+## SSPS for benign and malware Installation
 
 **SSPS for benign Installation ABI**
 
-![](Figures/SPSSbenignInsABI.png)
+![](Figures/SSPSbenignInsABI.png)
 
 
 
 **SSPS for benign Installation All**
 
-![](Figures/SPSSbenignInsAll.png)
+![](Figures/SSPSbenignInsAll.png)
 
 
 
 **SSPS for benign Installation Library**
 
-![](Figures/SPSSbenignInsLibrary.png)
+![](Figures/SSPSbenignInsLibrary.png)
 
 
 
 **SSPS for malware Installation ABI**
 
-![](Figures/SPSSmalwareInsABI.png)
+![](Figures/SSPSmalwareInsABI.png)
 
 
 
@@ -90,11 +91,39 @@
 
 **SSPS for malware Installation Library**
 
-![](Figures/SPSSmalwareInsLibrary.png)
+![](Figures/SSPSmalwareInsLibrary.png)
 
+
+## SSPS for benign and malware runtime
+
+**SSPS for benign Runtime**
+
+![](Figures/SSPSbenignRunAll.png)
+
+
+**SSPS for benign Runtime verify error**
+
+![](Figures/SSPSbenignRunVerify.png)
+
+
+**SSPS for benign Runtime native error**
+
+![](Figures/SSPSbenignRunNative.png)
 
 
 **SSPS for malware Runtime**
+
+![](Figures/SSPSmalwareRunAll.png)
+
+
+**SSPS for malware Runtime verify error**
+
+![](Figures/SSPSmalwareRunVerify.png)
+
+
+**SSPS for malware Runtime native error**
+
+![](Figures/SSPSmalwareRunNative.png)
 
 **Goal**
 
