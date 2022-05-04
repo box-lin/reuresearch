@@ -121,7 +121,7 @@ def void_main():
     """
     benignInstallTable = SPSSutil.get_dic()
     benignRuntimeTable = SPSSutil.get_dic()
-    malwareInstallTable = SPSSutil.get_dic_full()
+    malwareInstallTable = SPSSutil.get_dic()
     malwareRuntimeTable = SPSSutil.get_dic_full()
     
     """Update the above tables for SSPS
