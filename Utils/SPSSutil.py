@@ -137,7 +137,7 @@ def specificTableWrite2Excel(table, location):
     wb = Workbook()
     ws = wb.active
     ws.title = 'SSPS'
-    ws.append(['failure rate', 'min sdk', 'api year', 'year', 'api\'s year ', 'api-year', 'api-min'])
+    ws.append(['failure rate', 'min sdk', 'api level', 'year', 'api\'s year ', 'api-year', 'api-min'])
     for lst, stat in table.items():
         total, failCnt = stat 
         rate = float(failCnt/total) if total != 0 else 0 
@@ -146,3 +146,5 @@ def specificTableWrite2Excel(table, location):
         ws.append([rate, minsdk, apilevel, apkyear, apiyear, cal1, cal2])
     wb.save(location)
     print("write to {} completed!".format(location))
+    
+
